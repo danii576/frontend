@@ -1,0 +1,342 @@
+/* ================================
+   Navbar container
+================================ */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #3a53c5, #33ac37);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Search bar */
+.navbar-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.navbar-search input {
+  width: 60%;
+  max-width: 500px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background-color: rgba(254, 253, 253, 0.9);
+  color: #333;
+}
+
+/* Right side actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger menu button */
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.menu-btn i {
+  font-size: 22px;
+}
+
+/* ================================
+   Dropdown menu
+================================ */
+.menu-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 250px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.menu-dropdown.open {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu items */
+.menu-dropdown ul li {
+  padding: 12px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu-dropdown ul li:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+/* Links inside menu items */
+.menu-dropdown ul li a {
+  text-decoration: none; /* removes underline */
+  color: #333;
+  width: 100%;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.menu-dropdown ul li a:hover {
+  color: #007bff; /* hover color */
+}
+
+/* Submenu */
+.menu-dropdown ul li.has-submenu {
+  flex-direction: column;
+}
+
+.submenu-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 10px;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #333; /* default light mode */
+}
+
+.submenu-btn i {
+  font-size: 15px;
+  color: #3366ff;
+  transition: transform 0.2s ease;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.submenu.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.submenu li {
+  padding: 6px 0;
+  font-weight: 500;
+  color: #3366ff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submenu li:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+/* Unified font for dropdown and submenu */
+.menu-dropdown,
+.menu-dropdown ul li,
+.menu-dropdown ul li button {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+/* ================================
+   Navbar links outside dropdown
+================================ */
+.navbar a {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* keeps same color as parent */
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+/* Language button */
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lang-btn img {
+  width: 32px;
+  height: 22px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lang-btn:hover img {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+.flag-dropdown img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Theme button (no background, premium look) */
+.theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* Bigger icons */
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect for premium feel */
+.theme-btn:hover {
+  transform: scale(1.2);
+  color: blue;
+  text-shadow: 0 0 10px rgba(255, 212, 59, 0.7);
+}
+
+/* Icon glow for dark mode */
+body.dark-theme .theme-btn i {
+  color: #4dabf7;
+  text-shadow: 0 0 10px rgba(77, 171, 247, 0.6);
+}
+
+/* Default navbar light/dark */
+body.dark-theme .navbar {
+  background: linear-gradient(90deg, #1e1e1e, #2c2c2c);
+}
+
+/* ================================
+   Dark theme overrides
+================================ */
+/* Default (light theme) */
+.menu-dropdown {
+  background: #fff;
+  color: #333;
+}
+
+.menu-dropdown ul li a {
+  color: #333;
+}
+
+/* Dark mode (works for both body.dark-theme and .dark-menu) */
+body.dark-theme .menu-dropdown,
+.menu-dropdown.dark-menu {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+body.dark-theme .menu-dropdown ul li a,
+.menu-dropdown.dark-menu ul li a {
+  color: #fff !important;
+}
+
+/* Hover styles */
+body.dark-theme .menu-dropdown ul li:hover,
+.menu-dropdown.dark-menu ul li:hover {
+  background: #222 !important;
+}
+
+body.dark-theme .menu-dropdown ul li a:hover,
+.menu-dropdown.dark-menu ul li a:hover {
+  color: #4dabf7 !important;
+}
+
+/* Submenu links in dark mode */
+body.dark-theme .menu-dropdown ul ul li a,
+.menu-dropdown.dark-menu ul ul li a {
+  color: #fff !important;
+}
+
+body.dark-theme .menu-dropdown ul ul li:hover,
+.menu-dropdown.dark-menu ul ul li:hover {
+  background: #222 !important;
+}
+
+body.dark-theme .menu-dropdown ul ul li a:hover,
+.menu-dropdown.dark-menu ul ul li a:hover {
+  color: #4dabf7 !important;
+}
+
+/* ✅ Submenu titles in dark mode (Institution, Day Care, Nest, Timing) */
+body.dark-theme .submenu-btn,
+.menu-dropdown.dark-menu .submenu-btn {
+  color: #fff !important;
+}
+
+body.dark-theme .submenu-btn:hover,
+.menu-dropdown.dark-menu .submenu-btn:hover {
+  color: #4dabf7 !important;
+}
+
+/* ✅ Optional: caret icons in dark mode */
+body.dark-theme .submenu-btn i,
+.menu-dropdown.dark-menu .submenu-btn i {
+  color: #fff !important;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+  .navbar-search {
+    display: none;
+  }
+
+  .menu-btn {
+    font-size: 20px;
+  }
+
+  .menu-btn i {
+    font-size: 20px;
+  }
+
+  .menu-dropdown {
+    right: 10px;
+    width: 220px;
+  }
+}
