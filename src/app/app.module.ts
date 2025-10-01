@@ -29,7 +29,6 @@ import { SecretaryPage } from './pages/timing/secretary/secretary.page';
 import { StudentPage } from './pages/timing/student/student.page';
 
 @NgModule({
-  declarations: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -38,10 +37,8 @@ import { StudentPage } from './pages/timing/student/student.page';
     HttpClientModule,
     BrowserAnimationsModule,
 
-    // Root component
-    App,
-
-    // All your pages
+    // Import standalone components here, NOT in declarations
+    App,          // root component
     HomePage,
     NewsPage,
     ReportPage,
@@ -63,6 +60,5 @@ import { StudentPage } from './pages/timing/student/student.page';
     StudentPage
   ],
   providers: [],
-  bootstrap: [App] // bootstrap the root component
 })
 export class AppModule {}
