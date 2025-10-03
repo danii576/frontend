@@ -6,6 +6,7 @@ import { App } from './app';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'primeng/carousel';
 
 // Import your pages
 import { HomePage } from './pages/home/home.page';
@@ -57,7 +58,7 @@ import { StudentPage } from './pages/timing/student/student.page';
     GreenPage,
     BluePage,
     SecretaryPage,
-    StudentPage
+    StudentPage,CarouselModule
   ],
   providers: [],
 })

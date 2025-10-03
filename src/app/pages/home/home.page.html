@@ -1,4 +1,57 @@
-<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus aperiam maiores culpa fugiat. Quibusdam, accusamus non aperiam illo expedita dignissimos reiciendis in? Incidunt laboriosam fugiat natus porro vitae nam quos!</h1>
+<div class="slider-row">
+  <!-- Slider 1 -->
+  <div class="slider">
+    <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <div class="slide"><img src="assets/images/1.png" alt="S1-1"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S1-2"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S1-3"></div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span *ngFor="let dot of [0,1,2]; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"></span>
+    </div>
+  </div>
+
+  <!-- Slider 2 -->
+  <div class="slider">
+    <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <div class="slide"><img src="assets/images/1.png" alt="S2-1"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S2-2"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S2-3"></div>
+    </div>
+
+    <div class="dots">
+      <span *ngFor="let dot of [0,1,2]; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"></span>
+    </div>
+  </div>
+
+  <!-- Slider 3 -->
+  <div class="slider">
+    <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <div class="slide"><img src="assets/images/1.png" alt="S3-1"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S3-2"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S3-3"></div>
+    </div>
+
+
+    <div class="dots">
+      <span *ngFor="let dot of [0,1,2]; let i = index"
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"></span>
+    </div>
+  </div>
+</div>
+<div class="welcome-message">
+  <h2>Welcome to Centro Paroquial de Acção Social da Moita</h2>
+</div>
 <div>
-  <img style="margin-left: 400px;" src="assets/images/1.png" alt="home image">
+  <h3>
+    Our mission is to provide care, education, and support that strengthen families and empower the community.
+     We strive to promote dignity, inclusion, and solidarity in every action we take.
+  </h3>
 </div>

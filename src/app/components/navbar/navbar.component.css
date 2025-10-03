@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
+  height: 60px; /* fixed height */
+  padding: 0 20px; /* remove vertical padding so height stays fixed */
   background: linear-gradient(90deg, #3a53c5, #33ac37);
   color: #fff;
   font-family: Arial, sans-serif;
@@ -318,6 +320,37 @@ body.dark-theme .submenu-btn i,
 .menu-dropdown.dark-menu .submenu-btn i {
   color: #fff !important;
 }
+
+
+/* Light theme dropdown */
+.menu-dropdown {
+  background: rgba(255, 255, 255, 0.95); /* solid white with opacity */
+  color: #333;
+  backdrop-filter: blur(12px); /* glass effect */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 2000; /* make sure it's above page content */
+}
+
+/* Dark theme dropdown */
+body.dark-theme .menu-dropdown,
+.menu-dropdown.dark-menu {
+  background: rgba(20, 20, 20, 0.95); /* solid dark with opacity */
+  color: #fff;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2000;
+}
+
+/* Submenu inside dropdown */
+.submenu {
+  background: inherit; /* keep same background as parent */
+  border-radius: 8px;
+  padding: 6px 0;
+}
+
+
+
+
 
 /* ================================
    Responsive

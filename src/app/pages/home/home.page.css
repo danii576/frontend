@@ -1,0 +1,124 @@
+.slider-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 40px auto;
+  max-width: 1600px;
+}
+
+.slider {
+  flex: 1;
+  max-width: 500px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  position: relative;
+  background: #fff;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dots span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background: skyblue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background-color: darkblue;
+}
+/* Base message style */
+.welcome-message {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px 30px;
+  max-width: 800px;
+  border-radius: 16px;
+  font-family: 'Arial', sans-serif;
+  background: rgba(255, 255, 255, 0.8); /* default light */
+  color: #222;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+/* Heading style */
+.welcome-message h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+  color: inherit;
+}
+
+/* Dark mode support */
+body.dark-theme .welcome-message {
+  background: rgba(20, 20, 20, 0.85);
+  color: #f5f5f5;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Gradient border effect */
+.welcome-message::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(90deg, #3a53c5, #33ac37);
+  
+  /* Mask to only show border */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+h3 {
+  font-size: 1.3rem; /* readable size */
+  font-weight: 500; /* not too heavy */
+  line-height: 1.6; 
+  text-align: center; /* center it */
+  max-width: 800px; /* keeps text in a nice width */
+  margin: 40px auto; /* spacing + center */
+  padding: 20px 30px; 
+  color: #333; /* dark gray text */
+  border-radius: 12px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* soft shadow */
+}
