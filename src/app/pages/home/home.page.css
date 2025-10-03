@@ -122,3 +122,15 @@ h3 {
   border-radius: 12px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* soft shadow */
 }
+h4 {
+  font-size: 1.3rem; /* readable size */
+  font-weight: 500; /* not too heavy */
+  line-height: 1.6; 
+  text-align: center; /* center it */
+  max-width: 800px; /* keeps text in a nice width */
+  margin: 40px auto; /* spacing + center */
+  padding: 20px 30px; 
+  color: #333; /* dark gray text */
+  border-radius: 12px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* soft shadow */
+}
