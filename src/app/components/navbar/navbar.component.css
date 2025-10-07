@@ -348,6 +348,12 @@ body.dark-theme .menu-dropdown,
   padding: 6px 0;
 }
 
+.menu-dropdown .submenu-btn i.pi {
+  color: #333;        /* neutral dark gray */
+  margin-right: 8px;  /* spacing between icon and text */
+  font-size: 1rem;    /* consistent size */
+  vertical-align: middle;
+}
 
 
 

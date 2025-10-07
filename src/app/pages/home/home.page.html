@@ -2,60 +2,74 @@
   <!-- Slider 1 -->
   <div class="slider">
     <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-      <div class="slide"><img src="assets/images/1.png" alt="S1-1"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S1-2"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S1-3"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S1-1" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S1-2" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S1-3" /></div>
     </div>
 
     <!-- Dots -->
     <div class="dots">
-      <span *ngFor="let dot of [0,1,2]; let i = index"
-            [class.active]="i === currentIndex"
-            (click)="goToSlide(i)"></span>
+      <span
+        *ngFor="let dot of [0, 1, 2]; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+      ></span>
     </div>
   </div>
 
   <!-- Slider 2 -->
   <div class="slider">
     <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-      <div class="slide"><img src="assets/images/1.png" alt="S2-1"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S2-2"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S2-3"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S2-1" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S2-2" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S2-3" /></div>
     </div>
 
     <div class="dots">
-      <span *ngFor="let dot of [0,1,2]; let i = index"
-            [class.active]="i === currentIndex"
-            (click)="goToSlide(i)"></span>
+      <span
+        *ngFor="let dot of [0, 1, 2]; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+      ></span>
     </div>
   </div>
 
   <!-- Slider 3 -->
   <div class="slider">
     <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-      <div class="slide"><img src="assets/images/1.png" alt="S3-1"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S3-2"></div>
-      <div class="slide"><img src="assets/images/1.png" alt="S3-3"></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S3-1" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S3-2" /></div>
+      <div class="slide"><img src="assets/images/1.png" alt="S3-3" /></div>
     </div>
 
-
     <div class="dots">
-      <span *ngFor="let dot of [0,1,2]; let i = index"
-            [class.active]="i === currentIndex"
-            (click)="goToSlide(i)"></span>
+      <span
+        *ngFor="let dot of [0, 1, 2]; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+      ></span>
     </div>
   </div>
 </div>
 <div class="welcome-message">
   <h2>Welcome to Centro Paroquial de Acção Social da Moita</h2>
 </div>
+
 <div>
   <h3>
-    Our mission is to provide care, education, and support that strengthen families and empower the community.
-     We strive to promote dignity, inclusion, and solidarity in every action we take.
+    <h2>our mission</h2>
+
+    Our mission is to provide care, education, and support that strengthen families and empower the
+    community. We strive to promote dignity, inclusion, and solidarity in every action we take.
   </h3>
-  <h4>
-    aour services include childcare, elder care, family support programs, educational workshops, and community outreach initiatives.
-     We are committed to making a positive impact in the lives of those we serve.
-  </h4>
+</div>
+
+<div class="services-section">
+  <h3>
+    Our services include childcare, elder care, family support programs, educational workshops, and
+    community outreach initiatives. We are committed to making a positive impact in the livesof
+    those we serve.
+    <!-- More button -->
+    <button class="more-button" [routerLink]="['/about']">More</button>
+  </h3>
 </div>

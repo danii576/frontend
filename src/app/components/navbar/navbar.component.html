@@ -1,101 +1,170 @@
 <nav class="navbar">
- <div class="navbar-logo">
-  <img 
-    style="width: 70px; height: auto; margin-left: 20px; cursor: pointer; margin-top: 5px;" 
-    src="assets/images/main-log.png" 
-    alt="Moita Logo"
-    (click)="goHome()">
-</div>
-
+  <div class="navbar-logo">
+    <img
+      style="width: 70px; height: auto; margin-left: 20px; cursor: pointer; margin-top: 5px"
+      src="assets/images/main-log.png"
+      alt="Moita Logo"
+      (click)="goHome()"
+    />
+  </div>
 
   <div class="navbar-search">
-    <input type="text" placeholder="Pesquisa..." [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" />
+    <input
+      type="text"
+      placeholder="Pesquisa..."
+      [(ngModel)]="searchQuery"
+      (keyup.enter)="onSearch()"
+    />
   </div>
 
   <!-- Theme toggle button -->
-<button class="theme-btn" (click)="toggleTheme()">
-  <i class="pi" [ngClass]="isDarkTheme ? 'pi-moon' : 'pi-sun'"></i>
-</button>
-<!-- Language toggle button -->
-<button class="lang-btn" (click)="toggleLanguage()">
-  <img [src]="currentFlag" [alt]="currentLang" />
-</button>
-
-
+  <button class="theme-btn" (click)="toggleTheme()">
+    <i class="pi" [ngClass]="isDarkTheme ? 'pi-moon' : 'pi-sun'"></i>
+  </button>
+  <!-- Language toggle button -->
+  <button class="lang-btn" (click)="toggleLanguage()">
+    <img [src]="currentFlag" [alt]="currentLang" />
+  </button>
 
   <div class="navbar-actions">
     <button class="menu-btn" [class.active]="menuOpen" (click)="toggleMenu()">
       <i class="pi" [ngClass]="menuOpen ? 'pi-times' : 'pi-bars'"></i>
     </button>
   </div>
-  
 </nav>
 
-
 <!-- Dropdown Menu -->
-<div 
-  class="menu-dropdown" 
-  [class.open]="menuOpen" 
-  [ngClass]="isDarkTheme ? 'dark-menu' : 'light-menu'">
+<div
+  class="menu-dropdown"
+  [class.open]="menuOpen"
+  [ngClass]="isDarkTheme ? 'dark-menu' : 'light-menu'"
+>
   <ul>
-    <li><a routerLink="/" (click)="menuOpen = false">Home</a></li>
-    <li><a routerLink="/about" (click)="menuOpen = false">About</a></li>
-    <li><a routerLink="/report" (click)="menuOpen = false">Report</a></li>
-    <li><a routerLink="/news" (click)="menuOpen = false">News</a></li>
+    <!-- Main Menu -->
+    <li>
+      <a routerLink="/" (click)="menuOpen = false"><i class="pi pi-home"></i> Home</a>
+    </li>
+    <li>
+      <a routerLink="/about" (click)="menuOpen = false"><i class="pi pi-info-circle"></i> About</a>
+    </li>
+    <li>
+      <a routerLink="/report" (click)="menuOpen = false"><i class="pi pi-file"></i> Report</a>
+    </li>
+    <li>
+      <a routerLink="/news" (click)="menuOpen = false"><i class="pi pi-globe"></i> News</a>
+    </li>
 
     <!-- Institution Submenu -->
     <li class="has-submenu">
       <button class="submenu-btn" (click)="toggleSubmenu('instituicao')">
-        Institution
-        <i class="pi" [ngClass]="openSubmenu === 'instituicao' ? 'pi-angle-up' : 'pi-angle-down'"></i>
+        <i class="pi pi-building"></i> Institution
+        <i
+          class="pi"
+          [ngClass]="openSubmenu === 'instituicao' ? 'pi-angle-up' : 'pi-angle-down'"
+        ></i>
       </button>
       <ul class="submenu" [class.open]="openSubmenu === 'instituicao'">
-        <li><a routerLink="/institution/apresentation" (click)="menuOpen = false">Apresentation</a></li>
-        <li><a routerLink="/institution/governing-bodies" (click)="menuOpen = false">Governing Bodies</a></li>
+        <li>
+          <a routerLink="/institution/apresentation" (click)="menuOpen = false"
+            ><i class="pi pi-id-card"></i> Apresentation</a
+          >
+        </li>
+        <li>
+          <a routerLink="/institution/governing-bodies" (click)="menuOpen = false">
+            <i class="pi pi-sitemap"></i> Governing Bodies
+          </a>
+        </li>
       </ul>
     </li>
 
     <!-- Day Care Submenu -->
     <li class="has-submenu">
       <button class="submenu-btn" (click)="toggleSubmenu('daycare')">
-        Day Care
+        <i class="pi pi-users"></i> Day Care
         <i class="pi" [ngClass]="openSubmenu === 'daycare' ? 'pi-angle-up' : 'pi-angle-down'"></i>
       </button>
       <ul class="submenu" [class.open]="openSubmenu === 'daycare'">
-        <li><a routerLink="/daycare/nursery" (click)="menuOpen = false">Nursery</a></li>
-        <li><a routerLink="/daycare/one-two-year" (click)="menuOpen = false">1–2 years</a></li>
-        <li><a routerLink="/daycare/two-three-year" (click)="menuOpen = false">2–3 years</a></li>
+        <li>
+          <a routerLink="/daycare/nursery" (click)="menuOpen = false"
+            ><i class="pi pi-star"></i> Nursery</a
+          >
+        </li>
+        <li>
+          <a routerLink="/daycare/one-two-year" (click)="menuOpen = false"
+            ><i class="pi pi-clock"></i> 1–2 years</a
+          >
+        </li>
+        <li>
+          <a routerLink="/daycare/two-three-year" (click)="menuOpen = false"
+            ><i class="pi pi-clock"></i> 2–3 years</a
+          >
+        </li>
       </ul>
     </li>
 
     <!-- Nest Submenu -->
     <li class="has-submenu">
       <button class="submenu-btn" (click)="toggleSubmenu('nest')">
-        Nest
+        <i class="pi pi-book"></i> Nest
         <i class="pi" [ngClass]="openSubmenu === 'nest' ? 'pi-angle-up' : 'pi-angle-down'"></i>
       </button>
       <ul class="submenu" [class.open]="openSubmenu === 'nest'">
-        <li><a routerLink="/nest/red" (click)="menuOpen = false">Red</a></li>
-        <li><a routerLink="/nest/yellow" (click)="menuOpen = false">Yellow</a></li>
-        <li><a routerLink="/nest/green" (click)="menuOpen = false">Green</a></li>
-        <li><a routerLink="/nest/blue" (click)="menuOpen = false">Blue</a></li>
-      </ul>
-    </li>
-      <!-- Timing Submenu -->
-    <li class="has-submenu">
-      <button class="submenu-btn" (click)="toggleSubmenu('timing')">
-        Timing
-        <i class="pi" [ngClass]="openSubmenu === 'timing' ? 'pi-angle-up' : 'pi-angle-down'"></i>
-      </button>
-      <ul class="submenu" [class.open]="openSubmenu === 'timing'">
-        <li><a routerLink="/timing/secretary" (click)="menuOpen = false">Secretary</a></li>
-        <li><a routerLink="/timing/student" (click)="menuOpen = false">Student</a></li>
+        <li>
+          <a routerLink="/nest/red" (click)="menuOpen = false"
+            ><i class="pi pi-circle-fill" style="color: red"></i> Red</a
+          >
+        </li>
+        <li>
+          <a routerLink="/nest/yellow" (click)="menuOpen = false"
+            ><i class="pi pi-circle-fill" style="color: gold"></i> Yellow</a
+          >
+        </li>
+        <li>
+          <a routerLink="/nest/green" (click)="menuOpen = false"
+            ><i class="pi pi-circle-fill" style="color: green"></i> Green</a
+          >
+        </li>
+        <li>
+          <a routerLink="/nest/blue" (click)="menuOpen = false"
+            ><i class="pi pi-circle-fill" style="color: blue"></i> Blue</a
+          >
+        </li>
       </ul>
     </li>
 
-    <li><a routerLink="/ftac" (click)="menuOpen = false">FTAC</a></li>
-    <li><a routerLink="/rsop" (click)="menuOpen = false">RSOP And Day of Center</a></li>
-     <li><a routerLink="/donation" (click)="menuOpen = false">Donation</a></li>
-    <li><a routerLink="/contact" (click)="menuOpen = false">Contact</a></li>
+    <!-- Timing Submenu -->
+    <li class="has-submenu">
+      <button class="submenu-btn" (click)="toggleSubmenu('timing')">
+        <i class="pi pi-clock"></i> Timing
+        <i class="pi" [ngClass]="openSubmenu === 'timing' ? 'pi-angle-up' : 'pi-angle-down'"></i>
+      </button>
+      <ul class="submenu" [class.open]="openSubmenu === 'timing'">
+        <li>
+          <a routerLink="/timing/secretary" (click)="menuOpen = false"
+            ><i class="pi pi-user"></i> Secretary</a
+          >
+        </li>
+        <li>
+          <a routerLink="/timing/student" (click)="menuOpen = false"
+            ><i class="pi pi-users"></i> Student</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <a routerLink="/ftac" (click)="menuOpen = false"><i class="pi pi-briefcase"></i> FTAC</a>
+    </li>
+    <li>
+      <a routerLink="/rsop" (click)="menuOpen = false"
+        ><i class="pi pi-calendar"></i> RSOP And Day of Center</a
+      >
+    </li>
+    <li>
+      <a routerLink="/donation" (click)="menuOpen = false"><i class="pi pi-heart"></i> Donation</a>
+    </li>
+    <li>
+      <a routerLink="/contact" (click)="menuOpen = false"><i class="pi pi-phone"></i> Contact</a>
+    </li>
   </ul>
 </div>
